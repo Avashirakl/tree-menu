@@ -8,7 +8,7 @@ venv/bin/activate (venv/Scripts/activate) - Windows
 pip install -r requirements.txt
 
 Проведите миграции, при migrate создается superuser username:admin, password:admin,
-и модели MenuItem для примера(в файле menu/migrations/0004_example_menu_list.py): 
+и обьекты модели MenuItem для примера(в файле menu/migrations/0004_example_menu_list.py): 
 
 python manage.py migrate
 
