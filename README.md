@@ -11,6 +11,7 @@ pip install -r requirements.txt
 и модели MenuItem для примера(в файле menu/migrations/0004_example_menu_list.py): 
 
 python manage.py migrate
+
 python manage.py runserver
 
 Переходите по ссылке и вы должны увидеть древовидное меню:
