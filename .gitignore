@@ -1,0 +1,9 @@
+../../sarqyt/sarqyt_back/venv
+media
+db.sqlite3
+
+.env
+.idea
+
+**__pycache__**
+**.pyc
