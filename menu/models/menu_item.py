@@ -41,3 +41,13 @@ class MenuItem(
         if self.named_url:
             return reverse(self.named_url)
         return self.url
+
+    def get_expanded_children(self, current_page):
+        expanded_children = []
+        for child in self.children.all():
+            if child == current_page or (
+                    child.parent == current_page.parent) or (
+                    child.parent == current_page) or (
+                    current_page in child.children.all()):
+                expanded_children.append(child)
+        return expanded_children

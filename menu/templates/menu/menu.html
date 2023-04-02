@@ -4,24 +4,28 @@
         <ul>
             <li>
                 <a href="{{ item.get_url }}">{{ item.title }}</a>
-                {% if item.children.all %}
+                {% with expanded_children=item|get_expanded_children:current_page %}
+                {% if expanded_children %}
                     <ul>
-                        {% for child in item.children.all %}
+                        {% for child in expanded_children %}
                             <li>
                                 <a href="{{ child.get_url }}">{{ child.title }}</a>
-                                {% if child.children.all %}
+                                {% with expanded_grandchildren=child|get_expanded_children:current_page %}
+                                {% if expanded_grandchildren %}
                                     <ul>
-                                        {% for grandchild in child.children.all %}
+                                        {% for grandchild in expanded_grandchildren %}
                                             <li>
                                                 <a href="{{ grandchild.get_url }}">{{ grandchild.title }}</a>
                                             </li>
                                         {% endfor %}
                                     </ul>
                                 {% endif %}
+                                {% endwith %}
                             </li>
                         {% endfor %}
                     </ul>
                 {% endif %}
+                {% endwith %}
             </li>
         </ul>
     {% endif %}

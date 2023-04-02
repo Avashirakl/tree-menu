@@ -25,13 +25,13 @@ def create_example_menu(apps, schema_editor):
     main_menu.save()
     child_menu = MenuItem.objects.create(
         title='child_menu',
-        named_url='main_page',
+        named_url='child_page',
         parent=main_menu,
     )
     child_menu.save()
     grandchild_menu = MenuItem.objects.create(
         title='grandchild_menu',
-        named_url='main_page',
+        named_url='grandchild_page',
         parent=child_menu,
     )
     grandchild_menu.save()
