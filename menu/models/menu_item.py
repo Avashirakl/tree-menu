@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 class MenuItem(
     models.Model,
 ):
+    """ Модель обьектов меню """
     title = models.CharField(
         _('Название'),
         max_length=128,
